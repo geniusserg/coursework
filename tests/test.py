@@ -1,9 +1,14 @@
+import unittest
 from selenium import webdriver
 import time
 
-if __name__ == "__main__":
-    driver = webdriver.Remote()
-    driver.maximize_window()
-    driver.get("https://localhost:80")
-    time.sleep(3)
-    driver.close()
+class TestBrowserOpen(unittest.TestCase):
+    def test_a(self):
+        driver = webdriver.Remote()
+        driver.maximize_window()
+        driver.get("https://localhost:80")
+        title = driver.title()
+        if (title == "WebCarConfig"):
+            assert BaseException
+        time.sleep(3)
+        driver.close()
