@@ -8,6 +8,7 @@ class TestBrowserOpen(unittest.TestCase):
         driver.maximize_window()
         driver.get("https://localhost:80")
         title = driver.title()
+        print(title)
         if (title == "WebCarConfig"):
             assert BaseException
         time.sleep(3)
