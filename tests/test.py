@@ -6,7 +6,7 @@ class TestBrowserOpen(unittest.TestCase):
     def test_a(self):
         driver = webdriver.Remote()
         driver.maximize_window()
-        driver.get("https://localhost:80")
+        driver.get("https://localhost:8080")
         title = driver.title()
         if (title == "WebCarConfig"):
             assert BaseException
