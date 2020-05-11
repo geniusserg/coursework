@@ -16,7 +16,7 @@ jobs:
     - name: Try to connect local server
       run: curl http://localhost:8080/
     - name: Run the testing image with web driver Chrome
-      run: docker run -d -p 4444:4444 -p 80:80 -v /dev/shm:/dev/shm -v /home/runner/work/coursework/coursework/tests:/work selenium/standalone-chrome:3.141.59-20200409 python -m unittest -v /work/test.py
+      run: docker run -it -d -p 4444:4444 -p 80:80 -v /dev/shm:/dev/shm -v /home/runner/work/coursework/coursework/tests:/work selenium/standalone-chrome:3.141.59-20200409 python -m unittest -v /work/test.py
       
   deploy:
     runs-on: ubuntu-latest
@@ -24,4 +24,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the site in the container
-      run: echo "to be implemented"
+      run: echo ""
