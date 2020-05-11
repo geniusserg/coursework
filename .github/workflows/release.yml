@@ -1,0 +1,16 @@
+name: Deploy on GitHub Pages
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Update sources 
+      uses: actions/checkout@v2 
+      run echo "OK!"
+  
+    
