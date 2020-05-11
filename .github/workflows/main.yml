@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up directory
-      run: ls
+      run: pwd
     - name: Launch local server
       run: |
         docker run --name some-nginx -v ./html:/usr/share/nginx/html:ro  -p 8080:80 -d nginx
