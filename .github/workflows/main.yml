@@ -11,12 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up directory
-      run: pwd
     - name: Launch local server
-      run: |
-        docker run --name some-nginx -v ./html:/usr/share/nginx/html:ro  -p 8080:80 -d nginx
-        docker ps
+      run: docker run --name some-nginx -v /home/runner/work/coursework/coursework:/usr/share/nginx/html:ro  -p 8080:80 -d nginx
     - name: Try to connect local server
       run: curl http://localhost:8080/
     - name: Run the testing image with web driver Chrome
