@@ -2,10 +2,8 @@ from selenium import webdriver
 import time
 
 if __name__ == "__main__":
-    print( "testing started")
-    driver = webdriver.Chrome()
+    driver = webdriver.Remote()
     driver.maximize_window()
-    driver.get("https://localhost:80/CarConfig.htm")
+    driver.get("https://localhost:80")
     time.sleep(3)
     driver.close()
-    print( "site opened")
