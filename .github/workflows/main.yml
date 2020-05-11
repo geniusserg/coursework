@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: Course Work CI/CD
 
 on:
   push:
@@ -12,11 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Launch local server
-      run: docker run --name some-nginx -v $HOME/html:/usr/share/nginx/html:ro  -p 80:80 -d nginx
+      run: docker run --name some-nginx -v $HOME/html:/usr/share/nginx/html:ro  -p 8080:80 -d nginx
     - name: Try to connect local server
-      run: docker ps
+      run: curl http://localhost:8080/
     - name: Run the testing image with web driver Chrome
-      run: docker run -d -p 4444:4444 80:80 -v /dev/shm:/dev/shm $HOME/tests:/work selenium/standalone-chrome:3.141.59-20200409 /work/test.py
+      run: docker run -d -p 4444:4444 -p 80:80 -v /dev/shm:/dev/shm $HOME/tests:/work selenium/standalone-chrome:3.141.59-20200409 /work/test.py
       
   deploy:
     runs-on: ubuntu-latest
