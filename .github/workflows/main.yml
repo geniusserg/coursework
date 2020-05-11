@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Launch local server
-      run: docker run --name some-nginx -v /home/runner/work/coursework/coursework/html:/usr/share/nginx/html:ro  -p 8080:80 -d nginx
+      run: docker run -v /home/runner/work/coursework/coursework/html:/usr/share/nginx/html:ro  -p 8080:80 -d nginx
     - name: Try to connect local server
       run: ping -p 8080 localhost
     - name: Run the testing image with web driver Chrome
